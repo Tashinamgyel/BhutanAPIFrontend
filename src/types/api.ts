@@ -14,7 +14,7 @@ export interface EndpointCategory {
 }
 
 export const API_BASE_URL = 'https://api.bhutanapi.com/api/v1/bhutan';
-export const PROXY_BASE_URL = '/api/api/v1/bhutan';
+export const PROXY_BASE_URL = API_BASE_URL;
 
 export const endpointCategories: EndpointCategory[] = [
   {
