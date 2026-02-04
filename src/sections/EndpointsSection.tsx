@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Crown, Heart, MapPin, Mountain, Building, Globe, ArrowRight, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { endpointCategories } from '@/types/api';
@@ -28,14 +28,16 @@ interface EndpointsSectionProps {
 
 export function EndpointsSection({ activeSection, onTryEndpoint }: EndpointsSectionProps) {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
-    if (activeSection && sectionRefs.current[activeSection]) {
+    if (hasInteracted && activeSection && sectionRefs.current[activeSection]) {
       sectionRefs.current[activeSection]?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
     }
+    setHasInteracted(true);
   }, [activeSection]);
 
   return (

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AlertTriangle, Construction, Sparkles, X } from 'lucide-react';
+import { AlertTriangle, Construction, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -28,13 +28,6 @@ export function NoticeModal() {
       <DialogContent className="sm:max-w-lg bg-card border-white/10 p-0 overflow-hidden">
         {/* Header with gradient */}
         <div className="relative bg-gradient-to-br from-orange-500/20 to-amber-500/10 p-6 pb-4">
-          <button
-            onClick={handleDismiss}
-            className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg transition-colors"
-          >
-            <X className="w-4 h-4 text-muted-foreground" />
-          </button>
-          
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
               <Construction className="w-7 h-7 text-white" />
