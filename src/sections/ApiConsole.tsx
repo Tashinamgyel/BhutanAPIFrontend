@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { API_BASE_URL, PROXY_BASE_URL } from '@/types/api';
 import Prism from 'prismjs';
+import 'prismjs/components/prism-json';
 
 const presetEndpoints = [
   { label: 'General Details', url: `${API_BASE_URL}/details`, icon: Globe },
@@ -80,7 +81,7 @@ export function ApiConsole({ initialUrl }: ApiConsoleProps) {
   };
 
   const highlightJson = (json: string) => {
-    return Prism.highlight(json, Prism.languages.json, 'json');
+    return Prism.highlight(json, Prism.languages.json || Prism.languages.plain, 'json');
   };
 
   return (
